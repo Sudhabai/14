@@ -1,0 +1,28 @@
+const profile = { 
+  name: "Charlie", 
+  age: 29, 
+  address: { 
+    city: "San Francisco", 
+    zipcode: "94101" 
+  } 
+};
+
+const updates = { 
+  age: 30, 
+  address: { 
+    zipcode: "94109", 
+    country: "USA" 
+  } 
+};
+
+// Merging the objects using the spread operator
+const updatedProfile = {
+  ...profile, 
+  age: updates.age, 
+  address: { 
+    ...profile.address,  // Spread the original address object
+    ...updates.address   // Overwrite with the updated address properties
+  }
+};
+
+console.log(updatedProfile);
